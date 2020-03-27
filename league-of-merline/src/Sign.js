@@ -8,6 +8,7 @@ import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
+import background from './images/league-of-legends-header.jpg';
 
 function Copyright() {
   return (
@@ -27,7 +28,8 @@ const useStyles = makeStyles((theme) => ({
     height: '100vh',
   },
   image: {
-    backgroundImage: 'url(https://source.unsplash.com/random)',
+    //backgroundImage: 'url(https://estnn.com/wp-content/uploads/2020/01/league-of-legends-header-x-1200x900.jpg)',
+    backgroundImage: `url(${background})`,
     backgroundRepeat: 'no-repeat',
     backgroundColor:
       theme.palette.type === 'light' ? theme.palette.grey[50] : theme.palette.grey[900],
@@ -35,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundPosition: 'center',
   },
   paper: {
-    margin: theme.spacing(8, 4),
+    margin: theme.spacing(30, 4),
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
@@ -59,11 +61,11 @@ export default function SignInSide() {
   return (
     <Grid container component="main" className={classes.root}>
       <CssBaseline />
-      <Grid item xs={false} sm={4} md={7} className={classes.image} />
-      <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
+      <Grid item xs={false} sm={4} md={8} className={classes.image} />
+      <Grid item xs={12} sm={8} md={4} component={Paper} elevation={6} square>
         <div className={classes.paper}>
           <Typography component="h1" variant="h5">
-            Connexion
+            League of Merline
           </Typography>
           <form className={classes.form} noValidate>
             <TextField
@@ -95,7 +97,7 @@ export default function SignInSide() {
               color="primary"
               className={classes.submit}
             >
-              Sign In
+              Connexion
             </Button>
             <Box mt={5}>
               <Copyright />
