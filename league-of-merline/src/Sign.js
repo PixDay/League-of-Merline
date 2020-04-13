@@ -8,14 +8,13 @@ import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
-import background from './images/league-of-legends-header.jpg';
 
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
       {'Copyright © '}
       <Link color="inherit" href="https://material-ui.com/">
-        League of Merline
+        Merline Opinion
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
@@ -28,8 +27,7 @@ const useStyles = makeStyles((theme) => ({
     height: '100vh',
   },
   image: {
-    //backgroundImage: 'url(https://estnn.com/wp-content/uploads/2020/01/league-of-legends-header-x-1200x900.jpg)',
-    backgroundImage: `url(${background})`,
+    backgroundImage: 'url(https://source.unsplash.com/random)',
     backgroundRepeat: 'no-repeat',
     backgroundColor:
       theme.palette.type === 'light' ? theme.palette.grey[50] : theme.palette.grey[900],
@@ -65,7 +63,7 @@ export default function SignInSide() {
       <Grid item xs={12} sm={8} md={4} component={Paper} elevation={6} square>
         <div className={classes.paper}>
           <Typography component="h1" variant="h5">
-            League of Merline
+            Merline Opinion
           </Typography>
           <form className={classes.form} noValidate>
             <TextField
@@ -76,7 +74,7 @@ export default function SignInSide() {
               id="email"
               label="Nom de compte"
               name="email"
-              autoComplete="email"
+              // autoComplete="email"
               autoFocus
             />
             <TextField
@@ -88,7 +86,7 @@ export default function SignInSide() {
               label="Mot de passe"
               type="password"
               id="password"
-              autoComplete="current-password"
+              // autoComplete="current-password"
             />
             <Button
               type="submit"
@@ -96,6 +94,7 @@ export default function SignInSide() {
               variant="contained"
               color="primary"
               className={classes.submit}
+              href="home.js"
             >
               Connexion
             </Button>
