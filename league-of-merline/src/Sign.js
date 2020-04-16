@@ -98,6 +98,16 @@ export default function SignInSide() {
             >
               Connexion
             </Button>
+            <Button
+              type="submit"
+              fullWidth
+              variant="contained"
+              color="primary"
+              className={classes.submit}
+              href="home"
+            >
+              Créer un compte 
+            </Button>
             <Box mt={5}>
               <Copyright />
             </Box>
