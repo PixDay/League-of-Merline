@@ -35,7 +35,9 @@ export default function ButtonAppBar() {
           <Typography variant="h6" className={classes.title}>
             Merline
           </Typography>
-          <IconClear/>
+          <IconButton edge="end" color="inherit" aria-lable="menu" href="/">
+            <IconClear/>
+          </IconButton>
         </Toolbar>
       </AppBar>
       <Fab color="primary" aria-label="add" className="addButton">
