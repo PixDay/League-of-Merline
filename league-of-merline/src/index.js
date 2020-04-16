@@ -4,11 +4,13 @@ import './index.css';
 import * as serviceWorker from './serviceWorker';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Sign from './Sign';
+import Home from './home';
 
 ReactDOM.render(
-  <Browser>
+  <Router>
     <Route exact path="/" component={Sign} />
-  </Browser>,
+    <Route exact path="/home" component={Home} />
+  </Router>,
   document.getElementById('root')
 );
 
