@@ -8,6 +8,7 @@ import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
+import { KeyboardDatePicker } from '@material-ui/pickers';
 
 function Copyright() {
   return (
@@ -55,6 +56,11 @@ const useStyles = makeStyles((theme) => ({
 
 export default function SignInSide() {
   const classes = useStyles();
+  const [selectedDate, setSelectedDate] = React.useState(new Date('2014-08-18T21:11:54'));
+  const handleDateChange = (date) => {
+    setSelectedDate(date);
+  };
+
 
   return (
     <Grid container component="main" className={classes.root}>
@@ -71,10 +77,42 @@ export default function SignInSide() {
               margin="normal"
               required
               fullWidth
+              id="firstname"
+              label="Prénom"
+              name="firstname"
+              autoFocus
+            />
+            <TextField
+              variant="outlined"
+              margin="normal"
+              required
+              fullWidth
+              id="name"
+              label="Nom de famille"
+              name="email"
+              autoFocus
+            />
+            <KeyboardDatePicker
+                disableToolbar
+                variant="inline"
+                format="dd/MM/yyyy"
+                margin="normal"
+                id="date-picker-inline"
+                label="Date de naissance"
+                value={selectedDate}
+                onChange={handleDateChange}
+                KeyboardButtonProps={{
+                    'aria-label': 'change date',
+                }}
+            />
+            <TextField
+              variant="outlined"
+              margin="normal"
+              required
+              fullWidth
               id="email"
               label="Nom de compte"
               name="email"
-              // autoComplete="email"
               autoFocus
             />
             <TextField
@@ -86,7 +124,6 @@ export default function SignInSide() {
               label="Mot de passe"
               type="password"
               id="password"
-              // autoComplete="current-password"
             />
             <Button
               type="submit"
@@ -94,9 +131,9 @@ export default function SignInSide() {
               variant="contained"
               color="primary"
               className={classes.submit}
-              href="home"
+              href="/"
             >
-              Connexion
+              Créer
             </Button>
             <Button
               type="submit"
@@ -104,9 +141,9 @@ export default function SignInSide() {
               variant="contained"
               color="primary"
               className={classes.submit}
-              href="create-account"
+              href="/"
             >
-              Créer un compte 
+              J'ai déjà un compte !
             </Button>
             <Box mt={5}>
               <Copyright />
