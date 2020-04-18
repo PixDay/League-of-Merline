@@ -33,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
             <Typography variant="h6" className={classes.title}>
               Merline
             </Typography>
-            <IconButton edge="end" color="inherit" aria-lable="menu" href="/">
+            <IconButton edge="end" color="inherit" aria-label="menu" href="/">
               <IconClear/>
             </IconButton>
           </Toolbar>
