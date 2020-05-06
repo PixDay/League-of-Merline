@@ -8,7 +8,6 @@ import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
-import { KeyboardDatePicker } from '@material-ui/pickers';
 
 function Copyright() {
   return (
@@ -56,11 +55,6 @@ const useStyles = makeStyles((theme) => ({
 
 export default function SignInSide() {
   const classes = useStyles();
-  const [selectedDate, setSelectedDate] = React.useState(new Date('2014-08-18T21:11:54'));
-  const handleDateChange = (date) => {
-    setSelectedDate(date);
-  };
-
 
   return (
     <Grid container component="main" className={classes.root}>
@@ -91,19 +85,6 @@ export default function SignInSide() {
               label="Nom de famille"
               name="email"
               autoFocus
-            />
-            <KeyboardDatePicker
-                disableToolbar
-                variant="inline"
-                format="dd/MM/yyyy"
-                margin="normal"
-                id="date-picker-inline"
-                label="Date de naissance"
-                value={selectedDate}
-                onChange={handleDateChange}
-                KeyboardButtonProps={{
-                    'aria-label': 'change date',
-                }}
             />
             <TextField
               variant="outlined"
