@@ -8,6 +8,9 @@ import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
+import {
+  KeyboardDatePicker,
+} from '@material-ui/pickers';
 
 function Copyright() {
   return (
@@ -55,6 +58,11 @@ const useStyles = makeStyles((theme) => ({
 
 export default function SignInSide() {
   const classes = useStyles();
+  const [selectedDate, setSelectedDate] = React.useState(new Date('2014-08-18T21:11:54'));
+
+  const handleDateChange = (date) => {
+    setSelectedDate(date);
+  };
 
   return (
     <Grid container component="main" className={classes.root}>
@@ -85,6 +93,16 @@ export default function SignInSide() {
               label="Nom de famille"
               name="email"
               autoFocus
+            />
+             <TextField
+              id="date"
+              label="Birthday"
+              type="date"
+              defaultValue="2017-05-24"
+              className={classes.textField}
+              InputLabelProps={{
+                shrink: true,
+              }}
             />
             <TextField
               variant="outlined"
