@@ -1,3 +1,4 @@
+import 'date-fns';
 import React from 'react';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -8,7 +9,10 @@ import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
+import DateFnsUtils from '@date-io/date-fns';
 import {
+  MuiPickersUtilsProvider,
+  KeyboardTimePicker,
   KeyboardDatePicker,
 } from '@material-ui/pickers';
 
@@ -94,16 +98,6 @@ export default function SignInSide() {
               name="email"
               autoFocus
             />
-             <TextField
-              id="date"
-              label="Birthday"
-              type="date"
-              defaultValue="2017-05-24"
-              className={classes.textField}
-              InputLabelProps={{
-                shrink: true,
-              }}
-            />
             <TextField
               variant="outlined"
               margin="normal"
@@ -124,6 +118,21 @@ export default function SignInSide() {
               type="password"
               id="password"
             />
+            <MuiPickersUtilsProvider utils={DateFnsUtils}>
+              <KeyboardDatePicker
+                margin="normal"
+                id="date-picker-dialog"
+                required
+                fullWidth
+                label="Date de naissance"
+                format="MM/dd/yyyy"
+                value={selectedDate}
+                onChange={handleDateChange}
+                KeyboardButtonProps={{
+                  'aria-label': 'change date',
+                }}
+              />
+            </MuiPickersUtilsProvider>
             <Button
               type="submit"
               fullWidth
