@@ -1,20 +1,34 @@
-var { graphql, buildSchema } = require('graphql');
+const { GraphQLServer } = require('graphql-yoga')
 
-// Construct a schema, using GraphQL schema language
-var schema = buildSchema(`
-  type Query {
-    hello: String
+/* TYPEDEFS */
+
+const typeDefs = 
+`type Query {
+    firsname: String!
+    name: String!
+    birthDate: String!
+    accountLog: String!
+    password: String!
+    city: String
+}
+`
+
+
+/* RESOLVERS */
+const resolvers = {
+  Query: {
+    firsname : () => `Adrien`,
+    name : () => `Colombier`,
+    birthDate : () => `21 Avril 1997`,
+    accountLog : () => `adriencolombier`,
+    password : () => `colombier`,
+    city : () => `Fontainebleau`,
   }
-`);
+}
 
-// The root provides a resolver function for each API endpoint
-var root = {
-  hello: () => {
-    return 'Hello world!';
-  },
-};
-
-// Run the GraphQL query '{ hello }' and print out the response
-graphql(schema, '{ hello }', root).then((response) => {
-  console.log(response);
-});
+/* SERVER */
+const server = new GraphQLServer({
+  typeDefs,
+  resolvers,
+})
+server.start(() => console.log(`Server is running on http://localhost:4000`))
