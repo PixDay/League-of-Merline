@@ -61,7 +61,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function SignInSide() {
   const classes = useStyles();
-  const [selectedDate, setSelectedDate] = React.useState(new Date('2014-08-18T21:11:54'));
+  const [selectedDate, setSelectedDate] = React.useState(new Date('1997-04-21T21:11:54'));
 
   const handleDateChange = (date) => {
     setSelectedDate(date);
@@ -74,7 +74,7 @@ export default function SignInSide() {
       <Grid item xs={12} sm={8} md={4} component={Paper} elevation={6} square>
         <div className={classes.paper}>
           <Typography component="h1" variant="h5">
-            Merline Opinion
+            League of Merline
           </Typography>
           <form className={classes.form} noValidate>
             <TextField
