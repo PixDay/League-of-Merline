@@ -4,6 +4,11 @@ const { GraphQLServer } = require('graphql-yoga')
 
 const typeDefs = 
 `type Query {
+    user: User!
+}
+
+type User {
+    id: ID!
     firsname: String!
     name: String!
     birthDate: String!
@@ -15,14 +20,21 @@ const typeDefs =
 
 
 /* RESOLVERS */
+let adrien = [{firsname: "Adrien", name: "Colombier", birthDate: "21 Avril 1997", accountLog: "adriencolombier", password: "colombier", city: "Fontainebleau"}]
+
 const resolvers = {
-  Query: {
+  User: {
+    id : () => 1,
     firsname : () => `Adrien`,
     name : () => `Colombier`,
     birthDate : () => `21 Avril 1997`,
     accountLog : () => `adriencolombier`,
     password : () => `colombier`,
     city : () => `Fontainebleau`,
+  },
+
+  Query: {
+      user : () => adrien
   }
 }
 
