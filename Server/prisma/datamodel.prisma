@@ -1,0 +1,11 @@
+type User {
+    id : ID! @id
+    createAt : DateTime! @createAt
+    userAccountName : String!
+    userPassword : String!
+    userFirstName : String!
+    userName : String!
+    userPseudonym : String!
+    userBirthDate : DateTime
+    userDescription : String
+}
