@@ -1,0 +1,64 @@
+# import ProductionUpdateManyWithoutUsersInput from "./generated/prisma.graphql"
+
+type Query {
+  users(
+    where: UserWhereInput
+    orderBy: UserOrderByInput
+    skip: Int
+    after: String
+    before: String
+    first: Int
+    last: Int
+  ): [User]!
+  user(where: UserWhereUniqueInput!): User
+  usersConnection(
+    where: UserWhereInput
+    orderBy: UserOrderByInput
+    skip: Int
+    after: String
+    before: String
+    first: Int
+    last: Int
+  ): UserConnection!
+}
+
+type Mutation {
+  # Authentication queries
+  login(
+    accountName: String!
+    password: String!
+    rememberMe: Boolean
+  ): AuthPayload
+  register(accountName: String!, password: String!): AuthPayload
+  resetPassword(
+    oldPassword: String
+    newPassword: String!
+    where: UserWhereUniqueInput!
+  ): User
+
+  updateUser(data: UserUpdateInput!, where: UserWhereUniqueInput!): User
+  deleteUser(where: UserWhereUniqueInput!): User
+}
+
+type Subscription {
+  user(where: UserSubscriptionWhereInput): UserSubscriptionPayload
+}
+
+# Authentication types
+
+type AuthPayload {
+  token: String
+  user: User
+}
+
+type User {
+  id: ID!
+  accountName: String!
+  firstName: String
+  name: String
+  pseudonym: String
+  birthDate: DateTime
+  description: String
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
