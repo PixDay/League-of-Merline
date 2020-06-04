@@ -1,20 +1,24 @@
 import { GraphQLServer } from 'graphql-yoga';
+import express from 'express';
 import { Prisma } from 'prisma-binding';
+import { logger } from './logger';
 import resolvers from './resolvers';
+import { getUserIdRequest, getUserIdConnection } from './auth';
 
-const DIR_NAME = 'src';
+const DIR_NAME = process.env.DIR_NAME || 'src';
 
 // Building Prisma object
 const db = new Prisma({
   typeDefs: `${DIR_NAME}/generated/prisma.graphql`,
-  endpoint: 'http://192.168.99.100:4467',
+  endpoint: process.env.PRISMA_ENDPOINT,
+  secret: process.env.PRISMA_SECRET,
 });
 
-// Setting up server
-const typeDefs = `${DIR_NAME}/schema.graphql`;
+console.log(resolvers);
 
+// Setting up server
 const server = new GraphQLServer({
-  typeDefs,
+  typeDefs: `${DIR_NAME}/schema.graphql`,
   resolvers,
   resolverValidationOptions: {
     requireResolversForResolveType: false,
@@ -26,15 +30,16 @@ const server = new GraphQLServer({
 });
 
 const options = {
-  port: 3006,
-  endpoint: '/graphql',
-  subscriptions: '/subscriptions',
+  port: process.env.APP_PORT || 3000,
+  endpoint: process.env.APP_ENDPOINT || '/graphql',
+  subscriptions: process.env.APP_ENDPOINT_SUBSCRIPTIONS || '/subscriptions',
   playground: process.env.NODE_ENV === 'development' ? '/' : false,
+  bodyParserOptions: {
+    limit: '100Mb',
+  },
 };
-
-// Serve a static directory which is the image storage
 
 // Starting server
 server.start(options, ({ endpoint, port }) =>
-  console.log(`Server is running on http://localhost:${port}${endpoint}`)
+  logger.info(`Server is running on http://localhost:${port}${endpoint}`)
 );

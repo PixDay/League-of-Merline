@@ -1,3 +1,5 @@
+// exposing every requests
+
 export async function user(_, args, { db }, info) {
   return db.query.user(args, info);
 }

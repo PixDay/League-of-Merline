@@ -1,24 +1,24 @@
 {
-  "name": "server",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "league-of-merline",
+  "version": "0.1.0",
+  "main": "src/index.js",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "prisma": "prisma",
-    "graphql": "graphql",
     "start": "nodemon src/index.js --watch ./src --exec \"babel-node -r ./node_modules/dotenv/config\"",
     "playground": "graphql playground",
-    "dev": "npm-run-all --parallel start playground"
+    "dev": "npm-run-all --parallel start playground",
+    "build": "webpack --config webpack.prod.js",
+    "build:start": "node dist/server.js",
+    "lint": "eslint src/**/*.js",
+    "prisma": "prisma"
   },
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "graphql": "^15.0.0",
-    "graphql-cli": "^4.0.0",
+    "bcrypt": "^4.0.1",
+    "graphql": "^14.6.0",
     "graphql-yoga": "^1.18.3",
-    "prisma": "^1.34.10",
-    "prisma-binding": "^2.3.16"
+    "jsonwebtoken": "^8.5.1",
+    "prisma-binding": "^2.3.16",
+    "winston": "^3.2.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.8.4",

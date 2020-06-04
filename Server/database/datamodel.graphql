@@ -1,0 +1,18 @@
+type User {
+  id: ID! @id
+  role: Role! @default(value: USER)
+  accountName: String! @unique
+  password: String!
+  firstName: String
+  name: String
+  pseudonym: String
+  birthDate: DateTime
+  description: String
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
+}
+
+enum Role {
+  USER
+  ADMIN
+}
