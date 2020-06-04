@@ -1,32 +1,35 @@
-import { GraphQLServer } from "graphql-yoga";
-import { Prisma } from "prisma-binding";
-import resolvers from "./resolvers";
+import { GraphQLServer } from 'graphql-yoga';
+import { Prisma } from 'prisma-binding';
+import resolvers from './resolvers';
 
-const DIR_NAME = "src";
+const DIR_NAME = 'src';
 
 // Building Prisma object
 const db = new Prisma({
   typeDefs: `${DIR_NAME}/generated/prisma.graphql`,
-  endpoint: "http://192.168.99.100:4467"
+  endpoint: 'http://192.168.99.100:4467',
 });
+
 // Setting up server
+const typeDefs = `${DIR_NAME}/schema.graphql`;
+
 const server = new GraphQLServer({
-  typeDefs: `./${DIR_NAME}/schema.graphql`,
+  typeDefs,
   resolvers,
   resolverValidationOptions: {
-    requireResolversForResolveType: false
+    requireResolversForResolveType: false,
   },
   context: req => ({
     ...req,
-    db
-  })
+    db,
+  }),
 });
 
 const options = {
   port: 3006,
-  endpoint: "/graphql",
-  subscriptions: "/subscriptions",
-  playground: process.env.NODE_ENV === "development" ? "/" : false
+  endpoint: '/graphql',
+  subscriptions: '/subscriptions',
+  playground: process.env.NODE_ENV === 'development' ? '/' : false,
 };
 
 // Serve a static directory which is the image storage

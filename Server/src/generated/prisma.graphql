@@ -50,6 +50,7 @@ type Subscription {
 type User {
   id: ID!
   createdAt: DateTime!
+  updatedAt: DateTime!
   userAccountName: String!
   userPassword: String!
   userFirstName: String!
@@ -86,6 +87,8 @@ enum UserOrderByInput {
   id_DESC
   createdAt_ASC
   createdAt_DESC
+  updatedAt_ASC
+  updatedAt_DESC
   userAccountName_ASC
   userAccountName_DESC
   userPassword_ASC
@@ -105,6 +108,7 @@ enum UserOrderByInput {
 type UserPreviousValues {
   id: ID!
   createdAt: DateTime!
+  updatedAt: DateTime!
   userAccountName: String!
   userPassword: String!
   userFirstName: String!
@@ -175,6 +179,14 @@ input UserWhereInput {
   createdAt_lte: DateTime
   createdAt_gt: DateTime
   createdAt_gte: DateTime
+  updatedAt: DateTime
+  updatedAt_not: DateTime
+  updatedAt_in: [DateTime!]
+  updatedAt_not_in: [DateTime!]
+  updatedAt_lt: DateTime
+  updatedAt_lte: DateTime
+  updatedAt_gt: DateTime
+  updatedAt_gte: DateTime
   userAccountName: String
   userAccountName_not: String
   userAccountName_in: [String!]
