@@ -94,7 +94,7 @@ export default function SignInSide() {
               variant="contained"
               color="primary"
               className={classes.submit}
-              href="home"
+              href="board"
             >
               Connexion
             </Button>
