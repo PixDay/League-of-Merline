@@ -7,6 +7,7 @@ import SignIn from './components/sign-in';
 import SignUp from './components/sign-up';
 import Board from './components/home';
 import Profile from './components/profile';
+import Widgets from './components/widgets';
 
 ReactDOM.render(
   <Router>
@@ -14,6 +15,7 @@ ReactDOM.render(
     <Route exact path="/sign-up" component={SignUp}/>
     <Route exact path="/board" component={Board} />
     <Route exact path="/profile" component={Profile} />
+    <Route exact path="/widgets" component={Widgets} />
   </Router>,
   document.getElementById('root')
 );

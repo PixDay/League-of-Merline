@@ -9,6 +9,7 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import SettingsIcon from '@material-ui/icons/Settings';
 import DashboardIcon from '@material-ui/icons/Dashboard';
+import WidgetIcon from '@material-ui/icons/Widgets';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 
@@ -45,7 +46,9 @@ export default function TemporaryDrawer() {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
-        {[{text: 'Profile', icon: <SettingsIcon />, path: 'profile'}, {text: 'Tableau de bord', icon: <DashboardIcon />, path: 'board'}].map((object, index) => (
+        {[{text: 'Profile', icon: <SettingsIcon />, path: 'profile'}, 
+          {text: 'Tableau de bord', icon: <DashboardIcon />, path: 'board'},
+          {text: 'Services', icon: <WidgetIcon />, path: 'widgets'}].map((object, index) => (
             <ListItem button component="a" key={object.text} href={object.path}>
               <ListItemIcon>{object.icon}</ListItemIcon>
               <ListItemText primary={object.text} />

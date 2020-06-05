@@ -7,7 +7,7 @@ export default function ButtonAppBar() {
   return (
     <div>
       <Navbar></Navbar>
-      <Fab color="primary" aria-label="add" className="addButton">
+      <Fab color="primary" aria-label="add" className="addButton" href="widgets">
           <AddIcon />
       </Fab>
     </div>
