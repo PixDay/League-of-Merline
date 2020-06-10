@@ -7,16 +7,23 @@ import SignIn from './components/sign-in';
 import SignUp from './components/sign-up';
 import Board from './components/home';
 import Profile from './components/profile';
-import Widgets from './components/widgets';
+import gql from "graphql-tag";
+import * as client from './components/client';
+
+client.client.query({query: gql`
+{
+  users(orderBy: accountName_ASC)
+  {id accountName}
+} 
+`}).then(result => console.log(result));
 
 ReactDOM.render(
-  <Router>
-    <Route exact path="/" component={SignIn} />
-    <Route exact path="/sign-up" component={SignUp}/>
-    <Route exact path="/board" component={Board} />
-    <Route exact path="/profile" component={Profile} />
-    <Route exact path="/widgets" component={Widgets} />
-  </Router>,
+    <Router>
+      <Route exact path="/" component={SignIn} />
+      <Route exact path="/sign-up" component={SignUp}/>
+      <Route exact path="/board" component={Board} />
+      <Route exact path="/profile" component={Profile} />
+    </Router>,
   document.getElementById('root')
 );
 
