@@ -1,6 +1,11 @@
 # import ProductionUpdateManyWithoutUsersInput from "./generated/prisma.graphql"
 
 type Query {
+  login(
+    accountName: String!
+    password: String!
+    rememberMe: Boolean
+  ): AuthPayload
   users(
     where: UserWhereInput
     orderBy: UserOrderByInput
@@ -24,11 +29,6 @@ type Query {
 
 type Mutation {
   # Authentication queries
-  login(
-    accountName: String!
-    password: String!
-    rememberMe: Boolean
-  ): AuthPayload
   register(accountName: String!, password: String!): AuthPayload
   resetPassword(
     oldPassword: String

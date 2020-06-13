@@ -1,4 +1,4 @@
 import { updateUser, deleteUser } from './user';
-import { register, login } from './auth';
+import { register } from './auth';
 
-export { updateUser, deleteUser, register, login };
+export { updateUser, deleteUser, register};
