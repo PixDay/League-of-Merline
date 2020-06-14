@@ -8,6 +8,8 @@ import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
+import Checkbox from '@material-ui/core/Checkbox';
+import * as user from './user-query';
 
 function Copyright() {
   return (
@@ -53,8 +55,15 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+ class User extends React.Component {
+  accountName;
+  password;
+  rememberMe;
+}
+
 export default function SignInSide() {
   const classes = useStyles();
+  let userObject = new User();
 
   return (
     <Grid container component="main" className={classes.root}>
@@ -74,8 +83,9 @@ export default function SignInSide() {
               id="email"
               label="Nom de compte"
               name="email"
-              // autoComplete="email"
+              autoComplete="email"
               autoFocus
+              ref={(s) => userObject.accountName = s}
             />
             <TextField
               variant="outlined"
@@ -86,15 +96,25 @@ export default function SignInSide() {
               label="Mot de passe"
               type="password"
               id="password"
-              // autoComplete="current-password"
+              autoComplete="password"
+              ref={(s) => userObject.password = s}
             />
+            <div>
+              <Checkbox
+                  defaultChecked
+                  color="primary"
+                  inputProps={{ 'aria-label': 'secondary checkbox' }}
+                  ref={(b) => userObject.rememberMe = b}
+              />
+              Se souvenir de moi
+            </div>
             <Button
               type="submit"
               fullWidth
               variant="contained"
               color="primary"
               className={classes.submit}
-              href="board"
+              onClick={() => {user.login(userObject.accountName, userObject.password, userObject.rememberMe)}}
             >
               Connexion
             </Button>

@@ -7,15 +7,6 @@ import SignIn from './components/sign-in';
 import SignUp from './components/sign-up';
 import Board from './components/home';
 import Profile from './components/profile';
-import gql from "graphql-tag";
-import * as client from './components/client';
-
-client.client.query({query: gql`
-{
-  users(orderBy: accountName_ASC)
-  {id accountName}
-} 
-`}).then(result => console.log(result));
 
 ReactDOM.render(
     <Router>
