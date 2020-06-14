@@ -1,6 +1,6 @@
 FROM node:13
 WORKDIR /usr/src/app
-COPY Server/* .
+COPY ./Server/* .
 RUN npm install
 RUN npm ci --only=production
 EXPOSE 4006
