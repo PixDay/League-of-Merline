@@ -39,6 +39,8 @@ const options = {
   },
 };
 
+console.log(options);
+
 // Starting server
 server.start(options, ({ endpoint, port }) =>
   logger.info(`Server is running on http://localhost:${port}${endpoint}`)
