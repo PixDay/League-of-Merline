@@ -2,12 +2,14 @@ import * as client from './client';
 import gql from "graphql-tag";
 
 export function login(accountName, password, rememberMe) {
-  console.log("ASKING FOR LOGING IN");
-  console.log(client.client.query({query: gql`{
+  client.client.query({query: gql`{
     login(accountName: "${accountName}" password: "${password}" rememberMe: ${rememberMe})
     {token user{accountName id}}
   }
-  `}).then(result => console.log(result)));
+  `}).then(result => {
+    if (result.data["login"] != null)
+      console.log("SUCCESSLY LOGING IN");
+  });
 }
 
 export function getUsers() {

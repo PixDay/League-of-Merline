@@ -10,6 +10,7 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Checkbox from '@material-ui/core/Checkbox';
 import * as user from './user-query';
+import {useState} from 'react';
 
 function Copyright() {
   return (
@@ -55,15 +56,9 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
- class User extends React.Component {
-  accountName;
-  password;
-  rememberMe;
-}
-
 export default function SignInSide() {
   const classes = useStyles();
-  let userObject = new User();
+  const [data, setData] = useState({ accountName: '', password: '',  rememberMe: false});
 
   return (
     <Grid container component="main" className={classes.root}>
@@ -74,18 +69,17 @@ export default function SignInSide() {
           <Typography component="h1" variant="h5">
             League of Merline
           </Typography>
-          <form className={classes.form} noValidate>
+          <form className={classes.form} noValidate onSubmit={(evt) => { evt.preventDefault(); user.login(data.accountName, data.password, data.rememberMe) }}>
             <TextField
               variant="outlined"
               margin="normal"
               required
               fullWidth
-              id="email"
+              name="accountName"
               label="Nom de compte"
-              name="email"
-              autoComplete="email"
-              autoFocus
-              ref={(s) => userObject.accountName = s}
+              id="accountName"
+              autoComplete="accountName"
+              onChange={(evt) => setData({...data, accountName: evt.target.value })}
             />
             <TextField
               variant="outlined"
@@ -97,24 +91,22 @@ export default function SignInSide() {
               type="password"
               id="password"
               autoComplete="password"
-              ref={(s) => userObject.password = s}
+              onChange={(evt) => setData({...data, password: evt.target.value })}
             />
             <div>
               <Checkbox
-                  defaultChecked
                   color="primary"
                   inputProps={{ 'aria-label': 'secondary checkbox' }}
-                  ref={(b) => userObject.rememberMe = b}
+                  onChange={(evt) => setData({...data, rememberMe: evt.target.checked })}
               />
               Se souvenir de moi
             </div>
             <Button
-              type="submit"
               fullWidth
               variant="contained"
               color="primary"
               className={classes.submit}
-              onClick={() => {user.login(userObject.accountName, userObject.password, userObject.rememberMe)}}
+              type="submit"
             >
               Connexion
             </Button>
