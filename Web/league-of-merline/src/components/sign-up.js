@@ -14,6 +14,7 @@ import {
   MuiPickersUtilsProvider,
   KeyboardDatePicker,
 } from '@material-ui/pickers';
+import * as user from './user-mutation';
 
 function Copyright() {
   return (
@@ -62,6 +63,7 @@ const useStyles = makeStyles((theme) => ({
 export default function SignInSide() {
   const classes = useStyles();
   const [selectedDate, setSelectedDate] = React.useState(new Date('1997-04-21T21:11:54'));
+  const [data, setData] = React.useState({ accountName: '', password: ''});
 
   const handleDateChange = (date) => {
     setSelectedDate(date);
@@ -76,11 +78,10 @@ export default function SignInSide() {
           <Typography component="h1" variant="h5">
             League of Merline
           </Typography>
-          <form className={classes.form} noValidate>
+          <form className={classes.form} noValidate onSubmit={(evt) => { evt.preventDefault(); user.register(data.accountName, data.password) }}>
             <TextField
               variant="outlined"
               margin="normal"
-              required
               fullWidth
               id="firstname"
               label="Prénom"
@@ -90,7 +91,6 @@ export default function SignInSide() {
             <TextField
               variant="outlined"
               margin="normal"
-              required
               fullWidth
               id="name"
               label="Nom de famille"
@@ -106,6 +106,7 @@ export default function SignInSide() {
               label="Nom de compte"
               name="email"
               autoFocus
+              onChange={(evt) => setData({...data, accountName: evt.target.value })}
             />
             <TextField
               variant="outlined"
@@ -116,12 +117,12 @@ export default function SignInSide() {
               label="Mot de passe"
               type="password"
               id="password"
+              onChange={(evt) => setData({...data, password: evt.target.value })}
             />
             <MuiPickersUtilsProvider utils={DateFnsUtils}>
               <KeyboardDatePicker
                 margin="normal"
                 id="date-picker-dialog"
-                required
                 fullWidth
                 label="Date de naissance"
                 format="MM/dd/yyyy"
@@ -138,7 +139,6 @@ export default function SignInSide() {
               variant="contained"
               color="primary"
               className={classes.submit}
-              href="/"
             >
               Créer
             </Button>

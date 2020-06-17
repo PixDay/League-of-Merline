@@ -11,6 +11,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Checkbox from '@material-ui/core/Checkbox';
 import * as user from './user-query';
 import {useState} from 'react';
+import { BrowserRouter as Redirect } from "react-router-dom";
 
 function Copyright() {
   return (
@@ -69,7 +70,9 @@ export default function SignInSide() {
           <Typography component="h1" variant="h5">
             League of Merline
           </Typography>
-          <form className={classes.form} noValidate onSubmit={(evt) => { evt.preventDefault(); user.login(data.accountName, data.password, data.rememberMe) }}>
+          <form className={classes.form} noValidate 
+          onSubmit={(evt) => { evt.preventDefault(); user.login(data.accountName, data.password, data.rememberMe) }}
+          >
             <TextField
               variant="outlined"
               margin="normal"
@@ -120,6 +123,10 @@ export default function SignInSide() {
             >
               Créer un compte 
             </Button>
+            <Redirect to={{
+                pathname: "/board"
+              }}
+            />
             <Box mt={5}>
               <Copyright />
             </Box>

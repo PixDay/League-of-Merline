@@ -7,34 +7,35 @@ export function login(accountName, password, rememberMe) {
     {token user{accountName id}}
   }
   `}).then(result => {
-    if (result.data["login"] != null)
-      console.log("SUCCESSLY LOGING IN");
+    if (result.data["login"] != null) {
+      console.log("CHANGE L'URL BATARD");
+      console.log(result);
+    }
   });
 }
 
 export function getUsers() {
-  console.log("ASKING FOR USERS");
-    console.log(client.client.query({query: gql`
+    client.client.query({query: gql`
     {
       users(orderBy: accountName_ASC)
       {id accountName}
     } 
-    `}).then(result => console.log(result)))
+    `}).then(result => console.log(result));
 }
 
 export function getUser() {
-    console.log(client.client.query({query: gql`{
+    client.client.query({query: gql`{
         user(where: {accountName: "adriencolombier"})
         {
           id
           accountName
         }
-      }}))`}).then(result => console.log(result)))
+      }}))`}).then(result => console.log(result));
 }
 
 export function getUsersConnection() {
-    console.log(client.client.query({query: gql`
-    `}).then(result => console.log(result)));
+    client.client.query({query: gql`
+    `}).then(result => console.log(result));
 }
 
 export function register() {
