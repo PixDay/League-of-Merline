@@ -11,10 +11,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import Checkbox from '@material-ui/core/Checkbox';
 import * as user from './user-query';
 import {useState} from 'react';
-import Snackbar from '@material-ui/core/Snackbar';
-import CloseIcon from '@material-ui/icons/Close';
-import IconButton from '@material-ui/core/IconButton';
-
 
 function Copyright() {
   return (
@@ -63,18 +59,6 @@ const useStyles = makeStyles((theme) => ({
 export default function SignInSide() {
   const classes = useStyles();
   const [data, setData] = useState({ accountName: '', password: '',  rememberMe: false});
-  const [open, setOpen] = React.useState(false);
-
-  const handleClick = () => {
-    setOpen(true);
-  };
-  const handleClose = (event, reason) => {
-    if (reason === 'clickaway') {
-      return;
-    }
-
-    setOpen(false);
-  };
 
   return (
     <Grid container component="main" className={classes.root}>
@@ -125,7 +109,6 @@ export default function SignInSide() {
               color="primary"
               className={classes.submit}
               type="submit"
-              onClick={handleClick}
             >
               Connexion
             </Button>
@@ -139,23 +122,6 @@ export default function SignInSide() {
             >
               Créer un compte 
             </Button>
-            <Snackbar
-              anchorOrigin={{
-                vertical: 'bottom',
-                horizontal: 'center',
-              }}
-              open={open}
-              autoHideDuration={6000}
-              onClose={handleClose}
-              message="Echec de conexion"
-              action={
-                <React.Fragment>
-                  <IconButton size="small" aria-label="close" color="inherit" onClick={handleClose}>
-                    <CloseIcon fontSize="small" />
-                  </IconButton>
-                </React.Fragment>
-              }
-            />
             <Box mt={5}>
               <Copyright />
             </Box>

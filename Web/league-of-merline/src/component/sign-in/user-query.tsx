@@ -1,7 +1,7 @@
-import * as client from '../client.ts';
+import * as client from '../client';
 import gql from "graphql-tag";
 
-export function login(accountName, password, rememberMe) {
+export function login(accountName: string, password: string, rememberMe: boolean) {
   const query = gql`
     query($accountName: String! $password: String! $rememberMe: Boolean) 
     {

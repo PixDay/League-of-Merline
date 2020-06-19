@@ -4,8 +4,8 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
-import IconClear from '@material-ui/icons/Clear';
-import SideBar from './sidebar'
+import Sidebard from './sidebar';
+import ClearIcon from '@material-ui/icons/Clear';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -26,12 +26,12 @@ const useStyles = makeStyles((theme) => ({
       <div className={classes.root}>
         <AppBar position="static">
           <Toolbar>
-            <SideBar></SideBar>
+            <Sidebard></Sidebard>
             <Typography variant="h6" className={classes.title}>
               Merline
             </Typography>
             <IconButton edge="end" color="inherit" aria-label="menu" href="/">
-              <IconClear/>
+              <ClearIcon />
             </IconButton>
           </Toolbar>
         </AppBar>

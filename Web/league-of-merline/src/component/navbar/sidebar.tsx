@@ -7,20 +7,22 @@ import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import SettingsIcon from '@material-ui/icons/Settings';
-import DashboardIcon from '@material-ui/icons/Dashboard';
-import WidgetIcon from '@material-ui/icons/Widgets';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
+import SettingsIcon from '@material-ui/icons/Settings';
+import DashboardIcon from '@material-ui/icons/Dashboard';
+import WidgetsIcon from '@material-ui/icons/Widgets';
 
 const useStyles = makeStyles({
   list: {
     width: 400,
   },
   fullList: {
-    width: 'auto',
+    width: 400,
   },
 });
+
+type Anchor = 'left';
 
 export default function TemporaryDrawer() {
   const classes = useStyles();
@@ -28,18 +30,24 @@ export default function TemporaryDrawer() {
    left: false
   });
 
-  const toggleDrawer = (anchor, open) => (event) => {
-    if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
+  const toggleDrawer = (anchor: Anchor, open: boolean) => (
+    event: React.KeyboardEvent | React.MouseEvent,
+  ) => {
+    if (
+      event.type === 'keydown' &&
+      ((event as React.KeyboardEvent).key === 'Tab' ||
+        (event as React.KeyboardEvent).key === 'Shift')
+    ) {
       return;
     }
 
     setState({ ...state, [anchor]: open });
   };
 
-  const list = (anchor) => (
+  const list = (anchor: Anchor) => (
     <div
       className={clsx(classes.list, {
-        [classes.fullList]: anchor === 'top' || anchor === 'bottom',
+        [classes.fullList]: anchor === 'left' || anchor === 'bottom',
       })}
       role="presentation"
       onClick={toggleDrawer(anchor, false)}
@@ -48,7 +56,7 @@ export default function TemporaryDrawer() {
       <List>
         {[{text: 'Profile', icon: <SettingsIcon />, path: 'profile'}, 
           {text: 'Tableau de bord', icon: <DashboardIcon />, path: 'board'},
-          {text: 'Services', icon: <WidgetIcon />, path: 'widgets'}].map((object, index) => (
+          {text: 'Services', icon: <WidgetsIcon />, path: 'widgets'}].map((object, index) => (
             <ListItem button component="a" key={object.text} href={object.path}>
               <ListItemIcon>{object.icon}</ListItemIcon>
               <ListItemText primary={object.text} />
@@ -61,9 +69,9 @@ export default function TemporaryDrawer() {
 
   return (
     <div>
-      {['left'].map((anchor) => (
+      {(['left'] as Anchor[]).map((anchor) => (
         <React.Fragment key={anchor}>
-                <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu" onClick={toggleDrawer(anchor, true)}>
+                <IconButton edge="start" color="inherit" aria-label="menu" onClick={toggleDrawer(anchor, true)}>
                     <MenuIcon />
                 </IconButton>
           <Drawer anchor={anchor} open={state[anchor]} onClose={toggleDrawer(anchor, false)}>
