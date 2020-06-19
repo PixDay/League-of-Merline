@@ -10,5 +10,5 @@ export function register(accountName, password) {
         }
     `;
     
-    client.client.mutate({mutation, variables: {accountName, password}});
+    client.connection.mutate({mutation, variables: {accountName, password}});
 }

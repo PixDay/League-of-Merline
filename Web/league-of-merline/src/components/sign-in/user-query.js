@@ -10,7 +10,7 @@ export function login(accountName, password, rememberMe) {
     }
   `;
   
-  client.client.query({query, variables: {accountName, password, rememberMe}}).then(result => {
+  client.connection.query({query, variables: {accountName, password, rememberMe}}).then(result => {
     console.log(result);
     return result;
   });
