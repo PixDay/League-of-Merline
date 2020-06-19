@@ -1,11 +1,11 @@
-import * as client from './client';
+import * as client from '../client';
 import gql from "graphql-tag";
 
 export function register(accountName, password) {
     const mutation = gql`
         mutation ($accountName: String! $password: String!) 
         {
-            register(accountName: $accountName, password: $password) 
+            register (accountName: $accountName, password: $password) 
                 {token} 
         }
     `;
