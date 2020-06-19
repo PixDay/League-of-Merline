@@ -6,7 +6,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import SignIn from './components/sign-in/sign-in';
 import SignUp from './components/sign-up/sign-up';
 import Board from './components/home/home';
-import Profile from './components/profile/profile';
+import Profile from './components/profile/profile.ts';
 
 ReactDOM.render(
     <Router>
