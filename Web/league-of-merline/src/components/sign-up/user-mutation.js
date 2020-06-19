@@ -1,4 +1,4 @@
-import * as client from '../client';
+import * as client from '../client.ts';
 import gql from "graphql-tag";
 
 export function register(accountName, password) {
