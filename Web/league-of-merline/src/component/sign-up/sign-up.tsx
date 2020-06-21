@@ -1,4 +1,3 @@
-import 'date-fns';
 import React from 'react';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -9,8 +8,13 @@ import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
+import 'date-fns';
 import DateFnsUtils from '@date-io/date-fns';
-import {MuiPickersUtilsProvider, KeyboardDatePicker} from '@material-ui/pickers';
+import {
+  MuiPickersUtilsProvider,
+  KeyboardDatePicker,
+} from '@material-ui/pickers';
+
 import * as user from './user-mutation';
 
 function Copyright() {
@@ -60,14 +64,9 @@ const useStyles = makeStyles((theme) => ({
 export default function SignInSide() {
   const classes = useStyles();
   const [data, setData] = React.useState({ accountName: '', password: ''});
+  const [selectedDate, setSelectedDate] = React.useState<Date | null>(new Date('2014-08-18T21:11:54'));
+  const handleDateChange = (date: Date | null) => {setSelectedDate(date);};
 
-  const [selectedDate, setSelectedDate] = React.useState<Date | null>(
-    new Date('2014-08-18T21:11:54'),
-  );
-
-  const handleDateChange = (date: Date | null) => {
-    setSelectedDate(date);
-  };
   return (
     <Grid container component="main" className={classes.root}>
       <CssBaseline />
@@ -118,20 +117,22 @@ export default function SignInSide() {
               id="password"
               onChange={(evt) => setData({...data, password: evt.target.value })}
             />
-          <MuiPickersUtilsProvider utils={DateFnsUtils}>
-            <KeyboardDatePicker
-              margin="normal"
-              id="date-picker-dialog"
-              label="Date de naissance"
-              format="MM/dd/yyyy"
-              value={selectedDate}
-              onChange={handleDateChange}
-              fullWidth
-              KeyboardButtonProps={{
-                'aria-label': 'change date',
-              }}
-            />
-          </MuiPickersUtilsProvider>
+            
+            <MuiPickersUtilsProvider utils={DateFnsUtils}>
+              <KeyboardDatePicker
+                margin="normal"
+                id="date-picker-dialog"
+                label="Date picker dialog"
+                format="MM/dd/yyyy"
+                value={selectedDate}
+                onChange={handleDateChange}
+                KeyboardButtonProps={{
+                  'aria-label': 'change date',
+                }}
+                fullWidth
+              />
+            </MuiPickersUtilsProvider>
+
             <Button
               type="submit"
               fullWidth
