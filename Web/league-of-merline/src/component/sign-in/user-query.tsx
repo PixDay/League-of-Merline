@@ -1,5 +1,8 @@
 import * as client from '../client';
 import gql from "graphql-tag";
+import Profile from '../profile/profile';
+import ReactDOM from 'react-dom';
+import React from 'react';
 
 export function login(accountName: string, password: string, rememberMe: boolean) {
   const query = gql`
@@ -11,7 +14,8 @@ export function login(accountName: string, password: string, rememberMe: boolean
   `;
   
   client.connection.query({query, variables: {accountName, password, rememberMe}}).then(result => {
-    console.log(result);
-    return result;
+    if (result["data"]["login"] != null) {
+        ReactDOM.render(<Profile />, document.getElementById("root"));
+    } 
   });
 }
