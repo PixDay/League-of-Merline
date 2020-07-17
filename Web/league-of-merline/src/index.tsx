@@ -6,7 +6,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import SignIn from './component/sign-in/sign-in';
 import SignUp from './component/sign-up/sign-up';
 import Profile from './component/profile/profile';
-import Contacts from './component/widgets/widgets';
+import Contacts from './component/contact/contacts';
 
 ReactDOM.render(
   <Router>
