@@ -19,7 +19,9 @@ const useStyles = makeStyles((theme) => ({
     },
   }));
   
-  export default function ButtonAppBar() {
+  export interface Props {title: string};
+
+  export default function ButtonAppBar(props: Props) {
     const classes = useStyles();
   
     return (
@@ -28,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
           <Toolbar>
             <Sidebard></Sidebard>
             <Typography variant="h6" className={classes.title}>
-              Merline
+              {props.title}
             </Typography>
             <IconButton edge="end" color="inherit" aria-label="menu" href="/">
               <ClearIcon />

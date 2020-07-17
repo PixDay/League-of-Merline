@@ -6,8 +6,8 @@ import AddIcon from '@material-ui/icons/Add';
 export default function Profile() {
   return (
     <div>
-      <Navbar></Navbar>
-      <Fab color="primary" aria-label="add" className="addButton" href="widgets">
+      <Navbar title="Profile"></Navbar>
+      <Fab color="primary" aria-label="add" className="addButton" href="contacts">
           <AddIcon />
       </Fab>
     </div>
