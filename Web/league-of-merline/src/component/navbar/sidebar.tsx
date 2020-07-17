@@ -9,8 +9,8 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
-import DashboardIcon from '@material-ui/icons/Dashboard';
-import WidgetsIcon from '@material-ui/icons/Widgets';
+import PermIdentityIcon from '@material-ui/icons/PermIdentity';
+import ContactsIcon from '@material-ui/icons/Contacts';
 
 const useStyles = makeStyles({
   list: {
@@ -53,8 +53,8 @@ export default function TemporaryDrawer() {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
-        {[{text: 'Profile', icon: <DashboardIcon />, path: 'profile'},
-          {text: 'Services', icon: <WidgetsIcon />, path: 'widgets'}].map((object, index) => (
+        {[{text: 'Profile', icon: <PermIdentityIcon />, path: 'profile'},
+          {text: 'Contactes', icon: <ContactsIcon />, path: 'contacts'}].map((object, index) => (
             <ListItem button component="a" key={object.text} href={object.path}>
               <ListItemIcon>{object.icon}</ListItemIcon>
               <ListItemText primary={object.text} />
