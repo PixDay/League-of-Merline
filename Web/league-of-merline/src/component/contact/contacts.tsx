@@ -7,7 +7,7 @@ export default function Contacts() {
   return (
     <div>
       <Navbar title="Contactes"></Navbar>
-      <Fab color="primary" aria-label="add" className="addButton" href="widgets">
+      <Fab color="primary" aria-label="add" className="addButton" href="contacts">
           <AddIcon />
       </Fab>
     </div>
