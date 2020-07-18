@@ -1,14 +1,21 @@
 import React from 'react';
-import { makeStyles, createStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import Pagination from '@material-ui/lab/Pagination';
 
-const useStyles = makeStyles((theme) =>
-  createStyles({
+const useStyles = makeStyles((theme) => ({
     root: {
       '& > *': {
-        marginTop: theme.spacing(2),
-      },
+        position: 'fixed',
+        bottom: '2%',
+        width: '100%',
+      }
     },
+    alignItemsAndJustifyContent: {
+      width: '100%',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+    }
   }),
 );
 
@@ -16,8 +23,8 @@ export default function PaginationOutlined() {
   const classes = useStyles();
 
   return (
-    <div className={classes.root}>
-      <Pagination count={10} variant="outlined" color="primary" />
+    <div className={classes.root} >
+      <Pagination count={10} color="primary" className={classes.alignItemsAndJustifyContent}/>
     </div>
   );
 }
