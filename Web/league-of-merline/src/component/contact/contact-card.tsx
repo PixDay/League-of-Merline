@@ -14,7 +14,7 @@ const useStyles = makeStyles({
   },
 });
 
-export default function ImgMediaCard() {
+export default function ContactCard() {
   const classes = useStyles();
 
   return (
@@ -24,7 +24,7 @@ export default function ImgMediaCard() {
           component="img"
           alt="Contemplative Reptile"
           height="140"
-          image="/static/images/cards/contemplative-reptile.jpg"
+          image="https://source.unsplash.com/random"
           title="Contemplative Reptile"
         />
         <CardContent>
