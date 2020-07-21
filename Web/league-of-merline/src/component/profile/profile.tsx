@@ -8,8 +8,8 @@ import Avatar from '@material-ui/core/Avatar';
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     large: {
-      width: theme.spacing(12),
-      height: theme.spacing(12),
+      width: '20%',
+      height: '20%',
     },
   }),
 );
