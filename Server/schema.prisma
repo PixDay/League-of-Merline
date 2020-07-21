@@ -20,6 +20,11 @@ model User {
   updatedAt DateTime @updatedAt
 }
 
+model Category {
+  id String @default(cuid()) @id
+  name String
+}
+
 model Contact {
   id String @default(cuid()) @id
   creator String? 
