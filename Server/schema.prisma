@@ -34,5 +34,6 @@ model Contact {
   phone Int
   city String
   studies String
-  User User? @relation(fields: [creator], references: [id])
+  user User? @relation(fields: [creator], references: [id])
+  categories Category[]
 }
