@@ -1,13 +1,20 @@
 import { PrismaClient } from '@prisma/client'
+import { GraphQLServer } from 'graphql-yoga'
 
 const prisma = new PrismaClient()
 
-async function main() {
-    console.log("main function");
+
+const typeDefs = `
+  type Query {
+    hello(name: String): String!
+  }
+`
+
+const resolvers = {
+  Query: {
+    hello: (_, { name }) => `Hello ${name || 'World'}`,
+  },
 }
 
-main().catch(e => {
-    throw e
-}).finally(async () => {
-    await prisma.disconnect()
-})
+const server = new GraphQLServer({ typeDefs, resolvers })
+server.start(() => console.log('Server is running on localhost:4000'))
