@@ -1,18 +1,18 @@
 {
-  "name": "my-prisma-project",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "@prisma/cli": "^2.2.1"
-  },
-  "dependencies": {
-    "@prisma/client": "^2.2.1"
-  }
+    "name": "script",
+    "license": "MIT",
+    "devDependencies": {
+        "@prisma/cli": "2.0.0-beta.1",
+        "ts-node": "8.10.2",
+        "typescript": "3.8.3"
+    },
+    "scripts": {
+        "dev": "ts-node ./script.ts"
+    },
+    "dependencies": {
+        "@types/node": "13.9.5"
+    },
+    "engines": {
+        "node": ">=10.0.0"
+    }
 }
