@@ -1,7 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 96.55%; width: 100%;}
+html, body { height: 100%; width: 100%;}
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+h1 {
+    color: #3f51b5;
+    font-weight: bold;
+    font-size: 40px !important;
+}
 
 .div-full {
     width: 100%;
@@ -13,5 +19,9 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 }
 
 .sign-div-color {
-    background-color: #0f1b2b;
+    box-shadow: -4px 0px #00000054;
+}
+
+.sign-input {
+    width: 70%;
 }
