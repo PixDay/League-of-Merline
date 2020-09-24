@@ -10,6 +10,8 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
 
 // Angular Material Components
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     AppRoutingModule,
     BrowserAnimationsModule,
     FlexLayoutModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatInputModule,
+    MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent]
