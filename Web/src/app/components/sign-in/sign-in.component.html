@@ -1,9 +1,11 @@
 <div fxLayout="row" fxLayoutAlign="start stretch" fxFill>
     <div fxFlex="70%" class="sign-background"></div>
     <div fxFlex="30%" class="sign-div-color" fxLayout="column" fxLayoutAlign="space-around center">
-        <div fxFlex="10%" fxFill></div>
-        <div fxFlex="40%" fxLayout="column" fxLayoutAlign="space-around center" fxFill>
-            <h1 fxFlex="10%">League of Merline</h1>
+        <div fxFlex="70%" fxLayout="column" fxLayoutAlign="space-around center" fxFill>
+            <div fxFlex="10%" fxLayout="column" fxLayoutAlign="center center">
+                <h1>League of Merline</h1>
+                <h5>Connexion</h5>
+            </div>
             <div fxFlex="40%" fxLayout="column" fxLayoutAlign="space-around center" fxFill>
                 <mat-form-field appearance="outline" class="sign-input">
                     <mat-label>Adresse mail</mat-label>
@@ -16,8 +18,8 @@
                 <button mat-raised-button color="primary" class="sign-button" fxLayout="row" fxLayoutAlign="space-around center"><mat-icon>person</mat-icon> Connexion</button>
             </div>
         </div>
-        <div fxFlex="50%" fxLayout="column" fxLayoutAlign="space-around center" fxFill>
-            <button mat-raised-button color="primary" class="sign-button" fxLayout="row" fxLayoutAlign="space-around center"><mat-icon>add</mat-icon> Inscription</button>
+        <div fxFlex="30%" fxLayout="column" fxLayoutAlign="space-around center" fxFill>
+            <a mat-raised-button href="sign-up" class="sign-button" fxLayout="row" fxLayoutAlign="space-around center"><mat-icon>add</mat-icon> Je n'ai pas de compte</a>
         </div>
     </div>
 </div>
