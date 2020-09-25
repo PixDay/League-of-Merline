@@ -1,1 +1,23 @@
-<p>Dev branch work</p>
+<div fxLayout="row" fxLayoutAlign="start stretch" fxFill>
+    <div fxFlex="70%" class="sign-background"></div>
+    <div fxFlex="30%" class="sign-div-color" fxLayout="column" fxLayoutAlign="space-around center">
+        <div fxFlex="10%" fxFill></div>
+        <div fxFlex="40%" fxLayout="column" fxLayoutAlign="space-around center" fxFill>
+            <h1 fxFlex="10%">League of Merline</h1>
+            <div fxFlex="40%" fxLayout="column" fxLayoutAlign="space-around center" fxFill>
+                <mat-form-field appearance="outline" class="sign-input">
+                    <mat-label>Adresse mail</mat-label>
+                    <input matInput placeholder="adrien.colombier@epitech.eu">
+                </mat-form-field>
+                <mat-form-field appearance="outline" class="sign-input">
+                    <mat-label>Mot de passe</mat-label>
+                    <input matInput type="password">
+                </mat-form-field>
+                <button mat-raised-button color="primary" class="sign-button" fxLayout="row" fxLayoutAlign="space-around center"><mat-icon>person</mat-icon> Connexion</button>
+            </div>
+        </div>
+        <div fxFlex="50%" fxLayout="column" fxLayoutAlign="space-around center" fxFill>
+            <button mat-raised-button color="primary" class="sign-button" fxLayout="row" fxLayoutAlign="space-around center"><mat-icon>add</mat-icon> Inscription</button>
+        </div>
+    </div>
+</div>
