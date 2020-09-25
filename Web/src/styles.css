@@ -15,13 +15,18 @@ h1 {
 }
 
 .sign-background {
-    background-image: url("/assets/image/sign-background.jpg");
+    background: center / contain no-repeat url("/assets/image/sign-background-1.jpg");
+    background-size: auto;
 }
 
 .sign-div-color {
-    box-shadow: -4px 0px #00000054;
+    box-shadow: -4px 0px #44444454;
 }
 
 .sign-input {
+    width: 70%;
+}
+
+.sign-button {
     width: 70%;
 }
