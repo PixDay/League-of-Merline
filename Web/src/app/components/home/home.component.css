@@ -8,3 +8,9 @@ mat-drawer-content {
     flex-direction: column;
     align-items: flex-start;
 }
+
+.bottom-icon {
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+}
