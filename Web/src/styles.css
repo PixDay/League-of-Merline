@@ -1,32 +1,4 @@
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; width: 100%;}
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-
-h1 {
-    color: #3f51b5;
-    font-weight: bold;
-    font-size: 40px !important;
-}
-
-.div-full {
-    width: 100%;
-    height: 100%;
-}
-
-.sign-background {
-    background: center / contain no-repeat url("/assets/image/sign-background-1.jpg");
-    background-size: auto;
-}
-
-.sign-div-color {
-    box-shadow: -2px 0px #44444454;
-}
-
-.sign-input {
-    width: 70%;
-}
-
-.sign-button {
-    width: 70%;
-}
+body { margin: 0; font-family: Saira, "Helvetica Neue", sans-serif; }
