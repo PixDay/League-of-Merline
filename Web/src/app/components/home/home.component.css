@@ -1,5 +1,6 @@
 mat-drawer {
     width: 20%;
+    background-color: #EEEEEE;
 }
   
 mat-drawer-content {
@@ -13,4 +14,20 @@ mat-drawer-content {
     position: fixed;
     bottom: 15px;
     right: 15px;
+}
+
+mat-card {
+    background-color: #3f51b5;
+    border-radius: 0%;
+    color: white;
+    font-size: large;
+    cursor: pointer;
+}
+
+mat-card:hover {
+    color: #CCCCCC;
+}
+
+.padding-icon {
+    padding-right: 15px;
 }

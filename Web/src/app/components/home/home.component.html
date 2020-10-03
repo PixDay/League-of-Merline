@@ -1,6 +1,9 @@
 <div class="div-full">
     <mat-drawer-container class="sidenav-container" [hasBackdrop]="true" class="div-full">
-        <mat-drawer #drawer>left</mat-drawer>
+        <mat-drawer #drawer>
+            <mat-card fxLayout="row" fxLayoutAlign="start center"><mat-icon class="padding-icon">person</mat-icon> Profil</mat-card>
+            <mat-card fxLayout="row" fxLayoutAlign="start center"><mat-icon class="padding-icon">contacts</mat-icon> Contactes</mat-card>
+        </mat-drawer>
         <mat-drawer-content>
         content
         <button mat-fab color="primary" (click)="drawer.toggle()" class="bottom-icon">
