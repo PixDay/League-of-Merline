@@ -1,25 +1,22 @@
-<div fxLayout="row" fxLayoutAlign="start stretch" fxFill>
-    <div fxFlex="70%" class="sign-background"></div>
-    <div fxFlex="30%" class="sign-div-color" fxLayout="column" fxLayoutAlign="space-around center">
-        <div fxFlex="70%" fxLayout="column" fxLayoutAlign="space-around center" fxFill>
-            <div fxFlex="10%" fxLayout="column" fxLayoutAlign="center center">
-                <h1>League of Merline</h1>
-                <h5>Connexion</h5>
-            </div>
-            <div fxFlex="40%" fxLayout="column" fxLayoutAlign="space-around center" fxFill>
-                <mat-form-field appearance="outline" class="sign-input">
-                    <mat-label>Adresse mail</mat-label>
-                    <input matInput placeholder="adrien.colombier@epitech.eu">
-                </mat-form-field>
-                <mat-form-field appearance="outline" class="sign-input">
-                    <mat-label>Mot de passe</mat-label>
-                    <input matInput type="password">
-                </mat-form-field>
-                <button mat-raised-button color="primary" class="sign-button" fxLayout="row" fxLayoutAlign="space-around center"><mat-icon>person</mat-icon> Connexion</button>
-            </div>
-        </div>
-        <div fxFlex="30%" fxLayout="column" fxLayoutAlign="space-around center" fxFill>
-            <a mat-raised-button href="sign-up" class="sign-button" fxLayout="row" fxLayoutAlign="space-around center"><mat-icon>add</mat-icon> Je n'ai pas de compte</a>
-        </div>
+<div class="full-sized-background">
+  <div fxLayout="row" fxLayoutAlign="end stretch" fxFill>
+    <div  fxLayout="column" fxLayoutAlign="center center" class="form">
+      <mat-form-field appearance="outline" class="input">
+        <mat-label>Email</mat-label>
+        <input matInput>
+        <mat-icon matSuffix class="icon">person</mat-icon>
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="input">
+        <mat-label>Password</mat-label>
+        <input type="password" matInput>
+        <mat-icon matSuffix class="icon">lock</mat-icon>
+      </mat-form-field>
+      <button mat-flat-button class="login-button">Login</button>
+      <button mat-flat-button class="register-button">Register</button>
+      <div fxLayout="row" fxLayoutAlign="center center">
+        <mat-icon matSuffix class="clickable-icon">code</mat-icon>
+        <mat-icon matSuffix class="clickable-icon">mail_outline</mat-icon>
+      </div>
     </div>
+  </div>
 </div>
