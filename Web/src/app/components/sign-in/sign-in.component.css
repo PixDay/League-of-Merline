@@ -65,13 +65,13 @@
 
 .clickable-icon {
   font-size: 32px;
-  color: #FFF;
+  color: #0099FF;
   margin-right: 16px;
   margin-left: 16px;
   margin-top: 50px;
 }
 
 .clickable-icon:hover {
-  color: #0099FF;
+  color: #FFF;
   cursor: pointer;
 }

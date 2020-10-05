@@ -4,7 +4,7 @@
       <mat-form-field appearance="outline" class="input">
         <mat-label>Email</mat-label>
         <input matInput>
-        <mat-icon matSuffix class="icon">person</mat-icon>
+        <mat-icon matSuffix class="icon">mail_outline</mat-icon>
       </mat-form-field>
       <mat-form-field appearance="outline" class="input">
         <mat-label>Password</mat-label>
@@ -12,7 +12,7 @@
         <mat-icon matSuffix class="icon">lock</mat-icon>
       </mat-form-field>
       <button mat-flat-button class="login-button">Login</button>
-      <button mat-flat-button class="register-button">Register</button>
+      <button mat-flat-button class="register-button" (click)="changeRoute('sign-up')">Register</button>
       <div fxLayout="row" fxLayoutAlign="center center">
         <mat-icon matSuffix class="clickable-icon">code</mat-icon>
         <mat-icon matSuffix class="clickable-icon">mail_outline</mat-icon>
