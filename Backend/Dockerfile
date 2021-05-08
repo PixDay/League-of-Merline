@@ -1,23 +1,7 @@
-FROM golang:latest as builder
-
-ENV CGO_ENABLED=1
-ENV GOOS=linux
-
-WORKDIR /app
-COPY go.mod go.sum ./
-RUN go mod download
-COPY . ./
-RUN go generate ./...
-RUN go build -o merline
-
-FROM frolvlad/alpine-glibc
-
-ENV MERLINE_HOST=0.0.0.0
-
-RUN apk --update upgrade
-RUN apk add sqlite
-RUN rm -rf /var/cache/apk/*
-
-COPY --from=builder /app/merline /
-
-ENTRYPOINT ["/merline"]
+FROM ubuntu:trusty
+RUN sudo apt-get -y update
+RUN sudo apt-get -y upgrade
+RUN sudo apt-get install -y sqlite3 libsqlite3-dev
+RUN mkdir /db
+RUN /usr/bin/sqlite3 /db/test.db
+CMD /bin/bash
