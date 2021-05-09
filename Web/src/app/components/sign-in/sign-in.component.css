@@ -11,7 +11,8 @@
   height: 100%;
 }
 
-.left-title {
+.left-title
+{
   height: 33%;
   text-align: center;
   font-size: 64px;
@@ -19,8 +20,31 @@
   color: #3F51B5;
 }
 
-.left-inputs {
-
+.left-half
+{
+  height: 64%;
+  color: #3F51B5;
+  font-size: 14px;
 }
 
-.left-bottom {}
+.inputs
+{
+  width: 84%;
+}
+
+.buttons
+{
+  width: 100%;
+}
+
+.button
+{
+  width: 38.5%;
+}
+
+.left-inputs {
+  width: 100%;
+}
+
+.left-bottom {
+}

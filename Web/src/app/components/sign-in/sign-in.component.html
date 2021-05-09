@@ -1,8 +1,23 @@
 <div fxLayout="row" fxLayoutAlign="start center" class="full-space">
   <div class="sign-in-left" fxFlex="33">
     <div class="left-title"  fxLayout="column" fxLayoutAlign="center center" >League of Merline</div>
-    <div class="left-inputs">INPUTS</div>
-    <div class="left-bottom">BOTTOM TEXT</div>
+    <div class="left-half" fxLayout="column" fxLayoutAlign="space-between center" >
+      <div class="left-inputs" fxLayout="column" fxLayoutAlign="space-between center">
+        <mat-form-field class="inputs" appearance="outline">
+          <mat-label>Email</mat-label>
+          <input matInput placeholder="adrien.colombier@gmail.com">
+        </mat-form-field>
+        <mat-form-field class="inputs" appearance="outline">
+          <mat-label>Password</mat-label>
+          <input type="password" matInput>
+        </mat-form-field>
+        <div class="buttons" fxLayout="row" fxLayoutAlign="space-evenly center" >
+          <button class="button" mat-flat-button color="primary">Login</button>
+          <button class="button" mat-flat-button color="primary">Create an account</button>
+        </div>
+      </div>
+      <div class="left-bottom">Adrien Colombier Software Engineer</div>
+    </div>
   </div>
   <div class="sign-in-right">Right</div>
 </div>
