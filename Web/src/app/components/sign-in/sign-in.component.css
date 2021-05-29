@@ -42,12 +42,42 @@
   width: 38.5%;
 }
 
+.button:hover {
+  background-color: white;
+  color: #3F51B5;
+  border: solid #3F51B5 2px;
+}
+
 .left-inputs {
   width: 100%;
 }
 
-
 mat-card {
   width: 300px;
   height: 300px;
+}
+
+mat-icon {
+  font-size: 128px;
+  width: 128px;
+  height: 128px;
+}
+
+.blue {
+  color: #3F51B5;
+}
+
+.green {
+  color: #16c784;
+}
+
+.orange {
+  color: #FF5733;
+}
+
+.purple {
+  color: #BB33FF;
+}
+.yellow {
+  color: gold;
 }
