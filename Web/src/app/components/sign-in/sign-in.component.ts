@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog, MatDialogConfig } from "@angular/material/dialog";
+import { MatDialog } from '@angular/material/dialog';
 import { HomeComponent } from '../home/home.component';
 
 @Component({
@@ -9,17 +9,17 @@ import { HomeComponent } from '../home/home.component';
 })
 export class SignInComponent implements OnInit {
 
-  constructor(private dialog: MatDialog) { }
+  constructor(public dialog: MatDialog) { }
 
   ngOnInit(): void {
   }
 
-  openDialog() {
-    const dialogConfig = new MatDialogConfig();
+  openDialogAgenda() {
+    const dialogRef = this.dialog.open(HomeComponent);
 
-    dialogConfig.disableClose = true;
-    dialogConfig.autoFocus = true;
-
-    this.dialog.open(HomeComponent, dialogConfig);
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
   }
+
 }
