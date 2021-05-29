@@ -46,14 +46,8 @@
   width: 100%;
 }
 
-.left-bottom {
-}
 
 mat-card {
   width: 300px;
   height: 300px;
-}
-
-mat-card:hover {
-  height: 350px;
 }
