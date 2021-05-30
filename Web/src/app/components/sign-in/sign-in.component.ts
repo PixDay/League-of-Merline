@@ -21,7 +21,9 @@ export class SignInComponent implements OnInit {
   }
 
   openDialogSchedule() {
-    const dialogRef = this.dialog.open(ScheduleComponent);
+    const dialogRef = this.dialog.open(ScheduleComponent, {
+      width: '400px'
+    });
 
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);

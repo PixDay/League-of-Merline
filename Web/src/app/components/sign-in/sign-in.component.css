@@ -81,3 +81,8 @@ mat-icon {
 .yellow {
   color: gold;
 }
+
+.mat-dialog-container {
+  width: 400px;
+  height: 400px;
+}
