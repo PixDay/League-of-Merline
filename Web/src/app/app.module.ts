@@ -18,12 +18,12 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { HomeComponent } from './components/home/home.component';
 import { SignInComponent } from './components/sign-in/sign-in.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
-import { ScheduleComponent } from './components/sign-in/modals-components/schedule/schedule.component';
-import { GameComponent } from './components/sign-in/modals-components/game/game.component';
-import { CryptoComponent } from './components/sign-in/modals-components/crypto/crypto.component';
-import { ToDoComponent } from './components/sign-in/modals-components/to-do/to-do.component';
-import { DevComponent } from './components/sign-in/modals-components/dev/dev.component';
-import { ArchivementComponent } from './components/sign-in/modals-components/archivement/archivement.component';
+import { ScheduleComponent } from './components/modals-components/schedule/schedule.component';
+import { GameComponent } from './components/modals-components/game/game.component';
+import { CryptoComponent } from './components/modals-components/crypto/crypto.component';
+import { ToDoComponent } from './components/modals-components/to-do/to-do.component';
+import { DevComponent } from './components/modals-components/dev/dev.component';
+import { ArchivementComponent } from './components/modals-components/archivement/archivement.component';
 
 @NgModule({
   declarations: [
