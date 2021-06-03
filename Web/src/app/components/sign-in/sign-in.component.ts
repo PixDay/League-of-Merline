@@ -21,53 +21,27 @@ export class SignInComponent implements OnInit {
   }
 
   openDialogSchedule() {
-    const dialogRef = this.dialog.open(ScheduleComponent, {
-      width: '400px'
-    });
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
-    });
+    this.dialog.open(ScheduleComponent);
   }
 
   openDialogGame() {
-    const dialogRef = this.dialog.open(GameComponent);
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
-    });
+    this.dialog.open(GameComponent);
   }
 
   openDialogCrypto() {
-    const dialogRef = this.dialog.open(CryptoComponent);
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
-    });
+    this.dialog.open(CryptoComponent);
   }
 
   openDialogTodo() {
-    const dialogRef = this.dialog.open(ToDoComponent);
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
-    });
+    this.dialog.open(ToDoComponent);
   }
 
   openDialogDev() {
-    const dialogRef = this.dialog.open(DevComponent);
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
-    });
+    this.dialog.open(DevComponent);
   }
 
   openDialogArchievement() {
-    const dialogRef = this.dialog.open(ArchivementComponent);
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
-    });
+    this.dialog.open(ArchivementComponent);
   }
 
 }
