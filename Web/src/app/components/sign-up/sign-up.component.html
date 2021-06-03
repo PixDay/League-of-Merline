@@ -1,1 +1,71 @@
-<p>sign-up works!</p>
+<div class="full-space" fxLayout="row" fxLayoutAlign="start center" >
+    <div class="sign-in-left" fxFlex="33">
+      <div class="left-title"  fxLayout="column" fxLayoutAlign="center center" >League of Merline</div>
+      <div class="left-half" fxLayout="column" fxLayoutAlign="space-between center" >
+        <div class="left-inputs" fxLayout="column" fxLayoutAlign="space-between center">
+            <mat-form-field class="inputs" appearance="outline">
+                <mat-label>Prénom</mat-label>
+                <input matInput placeholder="Adrien">
+            </mat-form-field>
+            <mat-form-field class="inputs" appearance="outline">
+                <mat-label>Nom</mat-label>
+                <input matInput placeholder="Colombier">
+            </mat-form-field>
+          <mat-form-field class="inputs" appearance="outline">
+            <mat-label>Email</mat-label>
+            <input matInput placeholder="adrien.colombier@gmail.com">
+          </mat-form-field>
+          <mat-form-field class="inputs" appearance="outline">
+            <mat-label>Password</mat-label>
+            <input type="password" matInput>
+          </mat-form-field>
+          <mat-form-field class="inputs" appearance="outline">
+            <mat-label>Password verification</mat-label>
+            <input type="password" matInput>
+          </mat-form-field>
+          <div class="buttons" fxLayout="row" fxLayoutAlign="space-evenly center" >
+            <button class="button" mat-flat-button color="primary">Créer</button>
+            <button class="button" mat-flat-button color="primary" routerLink='/sign-in'>J'ai déjà un compte</button>
+          </div>
+        </div>
+        <div class="left-bottom">Adrien Colombier Software Engineer</div>
+      </div>
+    </div>
+    <div class="sign-in-right" fxLayout="column" fxLayoutAlign="space-around center">
+      <div class="full-space" fxLayout="row" fxLayoutAlign="space-around center" >
+        <mat-card fxLayout="column" fxLayoutAlign="space-around center">
+          <h1>Agenda</h1>
+          <mat-icon class="blue" aria-hidden="false" aria-label="Example home icon">event</mat-icon>
+          <button class="button" mat-flat-button color="primary" (click)="openDialogSchedule()">Détails</button>
+        </mat-card>
+        <mat-card fxLayout="column" fxLayoutAlign="space-around center">
+          <h1>Jeux</h1>
+          <mat-icon aria-hidden="false" aria-label="Example home icon">sports_esports</mat-icon>
+          <button class="button" mat-flat-button color="primary" (click)="openDialogGame()">Détails</button>
+        </mat-card>
+        <mat-card fxLayout="column" fxLayoutAlign="space-around center">
+          <h1>Crypto</h1>
+          <mat-icon class="green" aria-hidden="false" aria-label="Example home icon">trending_up</mat-icon>
+          <button class="button" mat-flat-button color="primary" (click)="openDialogCrypto()">Détails</button>
+        </mat-card>
+      </div>
+      <div class="full-space" fxLayout="row" fxLayoutAlign="space-around center" >
+        <mat-card fxLayout="column" fxLayoutAlign="space-around center">
+          <h1>To-do</h1>
+          <mat-icon class="orange" aria-hidden="false" aria-label="Example home icon">list</mat-icon>
+          <button class="button" mat-flat-button color="primary" (click)="openDialogTodo()">Détails</button>
+        </mat-card>
+        <mat-card fxLayout="column" fxLayoutAlign="space-around center">
+          <h1>Développement</h1>
+          <mat-icon class="purple" aria-hidden="false" aria-label="Example home icon">code</mat-icon>
+          <button class="button" mat-flat-button color="primary" (click)="openDialogDev()">Détails</button>
+        </mat-card>
+        <mat-card fxLayout="column" fxLayoutAlign="space-around center">
+          <h1>Succès</h1>
+          <mat-icon class="yellow" aria-hidden="false" aria-label="Example home icon">emoji_events</mat-icon>
+          <button class="button" mat-flat-button color="primary" (click)="openDialogArchievement()">Détails</button>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+  
